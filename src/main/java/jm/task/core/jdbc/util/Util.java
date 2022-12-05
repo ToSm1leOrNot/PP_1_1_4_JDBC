@@ -13,6 +13,10 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class Util {
+
+    private Util() {
+
+    }
     private static final String DB_Driver = "com.mysql.cj.jdbc.Driver";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/mydbtest";
     private static final String DB_USERNAME = "root";
@@ -54,18 +58,5 @@ public class Util {
             }
         }
         return sessionFactory;
-    }
-    private static volatile Util instance;
-    public static Util getInstance() {
-        Util localInstance = instance;
-        if (localInstance == null) {
-            synchronized (Util.class) {
-                localInstance = instance;
-                if (localInstance == null) {
-                    instance = localInstance = new Util();
-                }
-            }
-        }
-        return localInstance;
     }
 }

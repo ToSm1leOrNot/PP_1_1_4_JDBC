@@ -32,8 +32,8 @@ public class User {
         return id;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
